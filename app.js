@@ -63,7 +63,14 @@ function getRemainingTime(){
 
   items.forEach(function(item, index) {
     item.innerHTML = values[index];
-  })
+  });
+if(t < 0){
+  clearInterval(countdown);
+  deadline.innerHTML = `<h4 class="expired"> Sorry this give away has expred</h4>`;
 }
+}
+//countdown
+let countdown = setInterval(getRemainingTime, 1000 )
+
 
 getRemainingTime();
